@@ -79,7 +79,7 @@ if(shootKey)
 {
 	if(shootCooldown <= 0)
 	{
-		var bullet = instance_create_layer(x, y, "Instances", obj_bullet);
+		var bullet = instance_create_layer(x, y, "Instances", obj_bullet_player);
 		bullet.speed = bulletSpeed;	
 		bullet.direction = point_direction(x, y, mouse_x, mouse_y);
 		

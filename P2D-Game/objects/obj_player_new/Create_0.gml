@@ -15,3 +15,8 @@ canDoubleJump = true; // Check if you can double jump or not
 
 layerID = layer_tilemap_get_id("Tiles_1"); // Tilemap ID
 collideWith = [layerID]; // What to collide with
+
+hp = 100;
+
+originalX = x;
+originalY = y;

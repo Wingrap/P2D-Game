@@ -114,3 +114,13 @@ camY = lerp(camY, targetY, 0.1); // Adjust 0.1 for smoothness
 camera_set_view_pos(view_camera[0], camX, camY);
 
 #endregion
+
+#region Health System
+
+if(hp <= 0)
+{
+	instance_destroy();	
+	instance_create_layer(originalX, originalY, "Instances", obj_player_new); // Create bullets
+}
+
+#endregion
