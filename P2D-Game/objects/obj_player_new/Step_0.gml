@@ -4,10 +4,23 @@
 var isGrounded = place_meeting(x, y + groundBuffer, collideWith); 
 
 // Movement Controls
-var leftKey = keyboard_check(ord("A"));
-var rightKey = keyboard_check(ord("D"));
-var jumpKey = keyboard_check_pressed(vk_space);
-var dashKey = keyboard_check_pressed(vk_shift);
+var leftKey = keyboard_check(ord("A")); // Go left key
+var rightKey = keyboard_check(ord("D")); // Go right key
+var jumpKey = keyboard_check_pressed(vk_space); // Jump up key
+var dashKey = keyboard_check_pressed(ord("Q")); // Dash left OR right key
+var sprintKey = keyboard_check(vk_shift); // Sprint key
+
+// ? is the If and : is the Else
+var sprintMultiplier = (sprintKey ? 2 : 1); // Increase speed when sprinting
+// So it is the same as this: 
+/*
+if (sprintKey) {
+    sprintMultiplier = 2;
+} else {
+    sprintMultiplier = 1;
+}
+*/
+
 
 #endregion
 
@@ -27,7 +40,7 @@ if (canDash && dashKey)
 	
 }
 
-if (dashTime > 0) {
+if (dashTime > 0) { // If dashTime is bigger than 0
     dashTime -= 1; // Reduce dash time
 
     var dashFactor = dashTime / dashDuration; // Calculate the remaining time as a factor of the total dash duration
@@ -35,20 +48,22 @@ if (dashTime > 0) {
 }
 else
 {
-	horizontalSpeed += dir * accel;
+	// Change horizontal speed depending on the direction and acceleration
+	horizontalSpeed += dir * accel * sprintMultiplier;
 	
 	if(dir == 0) // No direction
 	{
 		if(horizontalSpeed < 0) // Left
 		{
-			horizontalSpeed = min(horizontalSpeed + decel, 0);
+			horizontalSpeed = min(horizontalSpeed + decel, 0); // Reduce speed, but dont go past 0
 		} else // Right
 		{
-			horizontalSpeed = max(horizontalSpeed - decel, 0);
+			horizontalSpeed = max(horizontalSpeed - decel, 0); // Reduce speed, but dont go past 0
 		}
 	}
 
-	horizontalSpeed = clamp(horizontalSpeed, -horizontalSpeedMax, horizontalSpeedMax); // Max speed
+	// Limit the horizontal speed so it stays within the maximum
+	horizontalSpeed = clamp(horizontalSpeed, -horizontalSpeedMax * sprintMultiplier, horizontalSpeedMax * sprintMultiplier); // Max speed
 }
 
 #endregion
