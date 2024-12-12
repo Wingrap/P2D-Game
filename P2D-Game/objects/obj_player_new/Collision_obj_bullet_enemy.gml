@@ -1,1 +1,1 @@
-hp -= 5;
+hp -= 5; // If bullet hits, hp goes down

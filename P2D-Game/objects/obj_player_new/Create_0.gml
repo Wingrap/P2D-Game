@@ -13,10 +13,16 @@ doubleJumpHeight = -10; // double jump height
 jumpBuffer = 10; // Frames after leaving ground when we can still jump
 canDoubleJump = true; // Check if you can double jump or not
 
+canDash = false; // Bool for if you can dash or not
+dashSpeed = 10; // Speed of dash
+dashDir = 0; // Direction of dash
+dashTime = 0;  // Time remaining for dash
+dashDuration = 10;  // Dash duration
+
 layerID = layer_tilemap_get_id("Tiles_1"); // Tilemap ID
 collideWith = [layerID]; // What to collide with
 
-hp = 100;
+hp = 100; // Health
 
-originalX = x;
-originalY = y;
+originalX = x; // Original X position
+originalY = y; // Original Y position
