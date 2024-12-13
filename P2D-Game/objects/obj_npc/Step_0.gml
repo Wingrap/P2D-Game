@@ -12,12 +12,14 @@ if(dist <= interactRange && !hit)
 {
 	if(interactKey)
 	{
-		show_debug_message("YOU ARE INTERACTING WITH NPC");
+		//show_debug_message("YOU ARE INTERACTING WITH NPC");
 		if(!instance_exists(obj_npc_textbox))
 		{
-			instance_create_layer(x, y -90, "Instances", obj_npc_textbox);	
+			var textBox = instance_create_layer(x, y -90, "Instances", obj_npc_textbox);	 // Create textbox
+			textBox.text = myText; // Set the text
+			textBox.name = myName; // Set the name
 		}
-		else if(instance_exists(obj_npc_textbox))
+		else if(instance_exists(obj_npc_textbox)) // If you press interactKey when the textbox is open, destroy textbox
 		{
 			instance_destroy(obj_npc_textbox);	
 		}
@@ -25,7 +27,7 @@ if(dist <= interactRange && !hit)
 
 	}
 }
-else if (dist >= interactRange)
+else if (dist >= interactRange) // If you walk out of the distance, destroy textbox
 {
 	if(instance_exists(obj_npc_textbox))
 	{
