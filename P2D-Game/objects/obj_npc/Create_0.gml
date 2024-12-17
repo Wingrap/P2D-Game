@@ -6,7 +6,7 @@ layerID = layer_tilemap_get_id("Tiles_1");
 collideWith = [layerID];
 
 // Text NPC has to say
-// Add more pages if you want to say more
+// Add more pages if you want to say more by: myText[NUMBER] = "TEXT"
 // ONLY CHANGE THIS
 myText[0] = "Hello how are you?";
 myText[1] = "Hope you are having a good day!";

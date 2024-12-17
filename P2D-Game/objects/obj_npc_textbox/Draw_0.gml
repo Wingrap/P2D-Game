@@ -22,13 +22,17 @@ if(charCount < string_length(text[page]))
 var textPart = string_copy(text[page], 1, charCount);
 
 // Draw the name;
-draw_set_color(c_green); // ONLY CHANGE THIS
+draw_set_color(c_fuchsia); // ONLY CHANGE THIS
 draw_set_halign(fa_center);
 draw_text(topLeftX + boxWidth/2, topLeftY, name);
+
+// Resetting color
+draw_set_color(c_white);
+
+// Resetting halign
 draw_set_halign(fa_left);
 
 // Draw the part of the text
-draw_set_color(c_white);
 draw_text_ext(topLeftX + xOffset, topLeftY + stringHeight, textPart, stringHeight / 1.2, boxWidth);
 
 // Set color back

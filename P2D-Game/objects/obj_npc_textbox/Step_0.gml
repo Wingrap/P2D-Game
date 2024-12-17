@@ -11,7 +11,7 @@ if(nextTextKey)
 		page += 1;
 		charCount = 0;
 	} 
-	else
+	else // Otherwise destroy the object
 	{
 		instance_destroy();
 	}
