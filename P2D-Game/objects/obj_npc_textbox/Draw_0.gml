@@ -35,10 +35,11 @@ draw_set_halign(fa_left);
 // Draw the part of the text
 draw_text_ext(topLeftX + xOffset, topLeftY + stringHeight, textPart, stringHeight / 1.2, boxWidth);
 
-var topRightX = x + spriteWidth / 2;
-var topRightY = y + spriteHeight / 2;
+// Calculate the bottomRight position
+var bottomRightX = x + spriteWidth / 2;
+var bottomRightY = y + spriteHeight / 2; 
 
-draw_sprite(spr_textbox_enter, 0, topRightX, topRightY);
+draw_sprite(spr_textbox_enter, 0, bottomRightX, bottomRightY); // Spawn the enter sprite at the bottom right
 
 // Set color back
 draw_set_color(c_black);
