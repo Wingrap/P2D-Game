@@ -52,6 +52,7 @@
     {"id":{"name":"spr_npc_test","path":"sprites/spr_npc_test/spr_npc_test.yy",},},
     {"id":{"name":"spr_player_test","path":"sprites/spr_player_test/spr_player_test.yy",},},
     {"id":{"name":"spr_textbox_button_test","path":"sprites/spr_textbox_button_test/spr_textbox_button_test.yy",},},
+    {"id":{"name":"spr_textbox_enter","path":"sprites/spr_textbox_enter/spr_textbox_enter.yy",},},
     {"id":{"name":"spr_textbox_test","path":"sprites/spr_textbox_test/spr_textbox_test.yy",},},
     {"id":{"name":"spr_tileset_1","path":"sprites/spr_tileset_1/spr_tileset_1.yy",},},
     {"id":{"name":"ts_1","path":"tilesets/ts_1/ts_1.yy",},},
